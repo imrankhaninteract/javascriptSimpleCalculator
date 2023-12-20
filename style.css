@@ -1,84 +1,99 @@
-body{
-	font-family: 'Open Sans',sans-serif;
-	background-color: black;
-    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/270640/pexels-photo-270640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-	margin: 20px auto;
+/* Updated CSS styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #333;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/270640/pexels-photo-270640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    margin: 20px auto;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
-#container{
-	width: 1000px;
-	height: 550px;
-		
+
+#calculator {
+    width: 320px;
+    height: 560px;
+    background-color: #f3f3f3;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
 }
-#calculator{
-	width: 320px;
-	height: 520px;
-	background-color: #eaedef;
-	margin: 0 auto;
-	top: 20px;
-	position: relative;
-	border-radius: 5px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+#result {
+    height: 120px;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
 }
-#result{
-	height: 120px;
+
+#history-value,
+#output-value {
+    margin: 0;
+    font-size: 24px;
 }
-#history{
-	text-align: right;
-	height: 20px;
-	margin: 0 20px;
-	padding-top: 20px;
-	font-size: 15px;
-	color: #919191;
+
+#history {
+    color: #666;
 }
-#output{
-	text-align: right;
-	height: 60px;
-	margin: 10px 20px;
-	font-size: 30px;
+
+#output {
+    color: #333;
 }
-#keyboard{
-	height: 400px;
+
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-top: 10px;
 }
-.operator, .number, .empty{
-	width: 50px;
-	height: 50px;
-	margin: 15px;
-	float: left;
-	border-radius: 50%;
-	border-width: 0;
-	font-weight: bold;
-	font-size: 15px;
+
+button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
 }
-.number, .empty{
-	background-color: #eaedef;
+
+.operator {
+    background-color: #e0e0e0;
+    color: #333;
 }
-.number, .operator{
-	cursor: pointer;
+
+.number {
+    background-color: #fff;
+    color: #333;
 }
-.operator:active, .number:active{
-	font-size: 13px;
+
+.empty {
+    visibility: hidden;
 }
-.operator:focus, .number:focus, .empty:focus{
-	outline: 0;
+
+button:focus {
+    outline: none;
 }
-button:nth-child(4){
-	font-size: 20px;
-	background-color: #20b2aa;
+
+/* Color adjustments for specific buttons */
+#clear {
+    background-color: #f44336;
+    color: white;
 }
-button:nth-child(8){
-	font-size: 20px;
-	background-color: #ffa500;
+
+#backspace {
+    background-color: #ff9800;
+    color: white;
 }
-button:nth-child(12){
-	font-size: 20px;
-	background-color: #f08080;
-}
-button:nth-child(16){
-	font-size: 20px;
-	background-color: #7d93e0;
-}
-button:nth-child(20){
-	font-size: 20px;
-	background-color: #9477af;
+
+#equals {
+    grid-column: span 2;
+    background-color: #2196f3;
+    color: white;
 }
