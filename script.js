@@ -76,3 +76,23 @@ for(var i =0;i<number.length;i++){
 		}
 	});
 }
+// Get all the buttons inside the calculator
+const buttons = document.querySelectorAll('#calculator button');
+
+// Function to remove the 'effect' class after a delay
+function removeEffectClass(button) {
+  setTimeout(() => {
+    button.classList.remove('effect');
+  }, 100); // 100 milliseconds (0.5 seconds)
+}
+
+// Add a click event listener to each button
+buttons.forEach(button => {
+  button.addEventListener('click', function() {
+    // Toggle the 'effect' class on the clicked button
+    this.classList.toggle('effect');
+
+    // Remove the 'effect' class after a delay
+    removeEffectClass(this);
+  });
+});
