@@ -23,7 +23,7 @@ function getFormattedNumber(num){
 	var value = n.toLocaleString("en");
 	return value;
 }
-function reverseNumberFormat(num){
+function  removeCommas(num){
 	return Number(num.replace(/,/g,''));
 }
 var operator = document.getElementsByClassName("operator");
@@ -34,7 +34,7 @@ for(var i =0;i<operator.length;i++){
 			printOutput("");
 		}
 		else if(this.id=="backspace"){
-			var output=reverseNumberFormat(getOutput()).toString();
+			var output= removeCommas(getOutput()).toString();
 			if(output){//if output has a value
 				output= output.substr(0,output.length-1);
 				printOutput(output);
@@ -49,7 +49,7 @@ for(var i =0;i<operator.length;i++){
 				}
 			}
 			if(output!="" || history!=""){
-				output= output==""?output:reverseNumberFormat(output);
+				output= output==""?output: removeCommas(output);
 				history=history+output;
 				if(this.id=="="){
 					var result=eval(history);
@@ -69,7 +69,7 @@ for(var i =0;i<operator.length;i++){
 var number = document.getElementsByClassName("number");
 for(var i =0;i<number.length;i++){
 	number[i].addEventListener('click',function(){
-		var output=reverseNumberFormat(getOutput());
+		var output= removeCommas(getOutput());
 		if(output!=NaN){ //if output is a number
 			output=output+this.id;
 			printOutput(output);
@@ -96,3 +96,10 @@ buttons.forEach(button => {
     removeEffectClass(this);
   });
 });
+
+
+
+
+
+
+
